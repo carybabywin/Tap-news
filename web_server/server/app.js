@@ -5,7 +5,7 @@ var express = require('express');
 var passport = require('passport');
 var path = require('path');
 
-//routers
+// routers
 var auth = require('./routes/auth');
 var index = require('./routes/index');
 var news = require('./routes/news');
@@ -17,7 +17,7 @@ require('./models/main.js').connect(config.mongoDbUri);
 // view engine setup
 app.set('views', path.join(__dirname, '../client/build/'));
 app.set('view engine', 'jade');
-app.use('/static', express.static(path.join(__dirname,'../client/build/static/')));
+app.use('/static', express.static(path.join(__dirname, '../client/build/static/')));
 
 // Load passport strategies
 app.use(passport.initialize());
@@ -41,8 +41,7 @@ app.use('/news', news);
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
-  res.send('404 not found');
+  res.send('404 Not Found');
 });
-
 
 module.exports = app;

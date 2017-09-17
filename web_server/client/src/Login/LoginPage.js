@@ -1,4 +1,4 @@
- import React, {PropTypes} from 'react';
+import React, {PropTypes} from 'react';
 import Auth from '../Auth/Auth';
 
 import LoginForm from './LoginForm';
